@@ -1,0 +1,23 @@
+{
+  "name": "ChatGPTForWeb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajjayraman/ChatGPTForWeb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surajjayraman/ChatGPTForWeb/issues"
+  },
+  "homepage": "https://github.com/surajjayraman/ChatGPTForWeb#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
