@@ -5,11 +5,14 @@ import axios from "axios";
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
+  console.log(`todos ${todos}`);
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/items")
       .then((response) => {
         setTodos(response.data);
+        console.log(`response data ${response.data}`);
       })
       .catch((error) => {
         console.error("There was an error!", error);
@@ -17,7 +20,7 @@ function TodoList() {
   }, []);
 
   return (
-    <div>
+    <div className="center-div">
       <h1>Todos</h1>
       {todos.map((todo) => (
         <div key={todo.id}>
