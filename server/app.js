@@ -38,7 +38,7 @@ app.get("/items/:id", (req, res) => {
 // Update a specific item by id
 app.put("/items/:id", (req, res) => {
   const { id } = req.params;
-  const itemIndex = items.findIndex((i) => i.id === id);
+  const itemIndex = items.findIndex((i) => i.id === parseInt(id));
   if (itemIndex === -1) {
     return res.status(404).send("Item not found");
   }
