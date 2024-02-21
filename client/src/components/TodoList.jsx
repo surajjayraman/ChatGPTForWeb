@@ -5,14 +5,12 @@ import axios from "axios";
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
-  console.log(`todos ${todos}`);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/items")
       .then((response) => {
         setTodos(response.data);
-        console.log(`response data ${response.data}`);
+        console.log(`response data ${JSON.stringify(response.data)}`);
       })
       .catch((error) => {
         console.error("There was an error!", error);
