@@ -9,7 +9,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 let items = []; // This will act as our simple database for todo items
-console.log("housingData", housingData);
+// console.log("housingData", housingData);
 
 // Create a new item
 app.post("/items", (req, res) => {
