@@ -2,12 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
+const housingData = require("./data.json");
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
 app.use(morgan("dev"));
 
-let items = []; // This will act as our simple database
+let items = []; // This will act as our simple database for todo items
+console.log("housingData", housingData);
 
 // Create a new item
 app.post("/items", (req, res) => {

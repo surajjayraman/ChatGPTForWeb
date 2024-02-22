@@ -1,0 +1,93 @@
+[
+  {
+    "city": "Toronto",
+    "province": "Ontario",
+    "price": 1000000,
+    "longitude": -79.347015,
+    "latitude": 43.65107
+  },
+  {
+    "city": "Ottawa",
+    "province": "Ontario",
+    "price": 600000,
+    "longitude": -75.697193,
+    "latitude": 45.42153
+  },
+  {
+    "city": "Mississauga",
+    "province": "Ontario",
+    "price": 800000,
+    "longitude": -79.6441,
+    "latitude": 43.589
+  },
+  {
+    "city": "Hamilton",
+    "province": "Ontario",
+    "price": 500000,
+    "longitude": -79.8496,
+    "latitude": 43.2557
+  },
+  {
+    "city": "London",
+    "province": "Ontario",
+    "price": 400000,
+    "longitude": -81.233,
+    "latitude": 42.9837
+  },
+  {
+    "city": "Windsor",
+    "province": "Ontario",
+    "price": 300000,
+    "longitude": -83.0364,
+    "latitude": 42.3149
+  },
+  {
+    "city": "Halifax",
+    "province": "Nova Scotia",
+    "price": 400000,
+    "longitude": -63.5752,
+    "latitude": 44.6488
+  },
+  {
+    "city": "Victoria",
+    "province": "British Columbia",
+    "price": 900000,
+    "longitude": 48.4284,
+    "latitude": -123.3656
+  },
+  {
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "price": 1200000,
+    "longitude": 49.2827,
+    "latitude": -123.1207
+  },
+  {
+    "city": "Edmonton",
+    "province": "Alberta",
+    "price": 800000,
+    "longitude": 53.5461,
+    "latitude": -113.4938
+  },
+  {
+    "city": "Calgary",
+    "province": "Alberta",
+    "price": 800000,
+    "longitude": 51.0447,
+    "latitude": -114.0719
+  },
+  {
+    "city": "Montreal",
+    "province": "Quebec",
+    "price": 600000,
+    "longitude": 45.5017,
+    "latitude": -73.5673
+  },
+  {
+    "city": "Calgary",
+    "province": "Alberta",
+    "price": 800000,
+    "longitude": 51.0447,
+    "latitude": -114.0719
+  }
+]
