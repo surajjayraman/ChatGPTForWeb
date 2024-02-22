@@ -4,13 +4,18 @@ const morgan = require("morgan");
 const app = express();
 const housingData = require("./data.json");
 const { sortedData } = require("./quickSort");
+const { OpenAIApi } = require("openai");
+
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
 app.use(morgan("dev"));
 
 // Set EJS as the view engine
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 let items = []; // This will act as our simple database for todo items
 // console.log("housingData", housingData);
@@ -35,6 +40,26 @@ app.get("/", (req, res) => {
 app.get("/data", (req, res) => {
   res.render("data", { housingData: sortedData(housingData, "price") });
   // res.send(sortedData(housingData, "price"));
+});
+
+// Add open AI chat interface
+// POST request endpoint
+app.post("/ask", async (req, res) => {
+  // getting prompt question from request
+  const prompt = req.body.prompt;
+
+  try {
+    if (prompt === null) {
+      throw new Error("Uh oh, no prompt was provided");
+    }
+    // return the result
+    return res.status(200).json({
+      success: true,
+      message: prompt,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 // Get all items
