@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 
 let items = []; // This will act as our simple database for todo items
 // console.log("housingData", housingData);
-console.log("sortedData", sortedData(housingData, "price"));
+// console.log("sortedData", sortedData(housingData, "price"));
 
 // Create a new item
 app.post("/items", (req, res) => {
@@ -26,6 +26,11 @@ app.post("/items", (req, res) => {
 // default route handler
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
+});
+
+// sort housing data by price
+app.get("/data", (req, res) => {
+  res.send(sortedData(housingData, "price"));
 });
 
 // Get all items
