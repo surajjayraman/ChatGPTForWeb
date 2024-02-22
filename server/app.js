@@ -4,11 +4,14 @@ const morgan = require("morgan");
 const app = express();
 const housingData = require("./data.json");
 const { sortedData } = require("./quickSort");
-const { OpenAIApi } = require("openai");
+// import modules from OpenAI library
+const OpenAIApi = require("openai");
 
-// const openai = new OpenAI({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
+// configure dotenv
+require("dotenv").config();
+
+// create an instance of the OpenAI API
+const openai = new OpenAIApi({ apiKey: process.env.OPENAI_API_KEY });
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
@@ -52,10 +55,32 @@ app.post("/ask", async (req, res) => {
     if (prompt === null) {
       throw new Error("Uh oh, no prompt was provided");
     }
+    // trigger OpenAI completion
+    const response = await openai.completions.create({
+      model: "gpt-3.5-turbo",
+      prompt,
+    });
+
+    // const completion = await openai.chat.completions.create({
+    //   messages: [
+    //     { role: "system", content: "You are a helpful assistant." },
+    //     { role: "user", content: "Who won the world series in 2020?" },
+    //     {
+    //       role: "assistant",
+    //       content: "The Los Angeles Dodgers won the World Series in 2020.",
+    //     },
+    //     { role: "user", content: "Where was it played?" },
+    //   ],
+    //   model: "gpt-3.5-turbo",
+    // });
+
+    // retrieve the completion text from response
+    const completion = response.data.choices[0].text;
+
     // return the result
     return res.status(200).json({
       success: true,
-      message: prompt,
+      message: completion,
     });
   } catch (error) {
     console.log(error.message);
