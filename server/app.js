@@ -9,6 +9,9 @@ app.use(express.json()); // for parsing application/json
 app.use(cors());
 app.use(morgan("dev"));
 
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
 let items = []; // This will act as our simple database for todo items
 // console.log("housingData", housingData);
 // console.log("sortedData", sortedData(housingData, "price"));
@@ -30,7 +33,8 @@ app.get("/", (req, res) => {
 
 // sort housing data by price
 app.get("/data", (req, res) => {
-  res.send(sortedData(housingData, "price"));
+  res.render("data", { housingData: sortedData(housingData, "price") });
+  // res.send(sortedData(housingData, "price"));
 });
 
 // Get all items

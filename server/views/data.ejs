@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data</title>
+    <style>
+      .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 class="center-container">Data Sorted by Price</h1>
+      <table class="center-container">
+        <tr>
+          <th>City</th>
+          <th>Price</th>
+        </tr>
+        <% for (let i = 0; i < housingData.length; i++) { %>
+        <tr>
+          <td><%= housingData[i].city %></td>
+          <td><%= housingData[i].price %></td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
+</html>
