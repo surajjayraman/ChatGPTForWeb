@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
 const housingData = require("./data.json");
+const { sortedData } = require("./quickSort");
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
@@ -10,6 +11,7 @@ app.use(morgan("dev"));
 
 let items = []; // This will act as our simple database for todo items
 // console.log("housingData", housingData);
+console.log("sortedData", sortedData(housingData, "price"));
 
 // Create a new item
 app.post("/items", (req, res) => {
